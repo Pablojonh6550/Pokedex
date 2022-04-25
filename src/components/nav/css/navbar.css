@@ -1,12 +1,40 @@
 nav {
-    height: 100px;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 1em;
+}
+
+.menu {
+    padding: 0.7rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    gap: 1.5rem;
+}
+
+.menu a {
+    color: #fff;
+    font-weight: 500;
+    
+}
+
+.menu_item svg {
+    color: #fff;
+}
+
+.menu a:hover {
+    color: #666;
+}
+
+.menu_item {
+    display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .navbar_logo {
-    width: 160px;
+    width: 120px;
     
 }
