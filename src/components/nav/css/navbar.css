@@ -5,6 +5,7 @@ nav {
     align-items: center;
     background-color: #222;
     padding: 1em;
+    box-shadow: rgb(0, 0, 0, 0.4) 0px 30px 30px inset;
 }
 
 .menu {
