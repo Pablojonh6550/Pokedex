@@ -1,7 +1,8 @@
 import React from "react";
 
-import { AiFillHome, AiFillHeart } from 'react-icons/ai';
 import './css/navbar.css';
+
+import { AiFillHome, AiFillHeart } from 'react-icons/ai';
 import SearchBar from "./SearchBar";
 
 function NavBar() {
