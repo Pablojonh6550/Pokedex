@@ -21,6 +21,7 @@ function SearchBar() {
 
     const onSearchHandler = (pokemon) => {
         const result = searchPokemon(pokemon);
+        setPokemon(result);
         console.log("pokemon ", result);
     }
 
@@ -30,6 +31,7 @@ function SearchBar() {
                 <input type="text" placeholder="Buscar Pokemon" onChange={onChangeHandler}/>
             </div>
             <button className="button_searchbar" onClick={onButtonClickHandler}><BiSearchAlt/></button>
+            {!pokemon}
         </div>
     );
 }
