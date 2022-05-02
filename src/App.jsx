@@ -31,7 +31,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <PokedexPage pokemons={pokemons} loading={loading}/>
+      <PokedexPage pokemons={pokemons.results} loading={loading}/>
     </div>
   );
 }

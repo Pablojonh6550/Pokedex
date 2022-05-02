@@ -1,6 +1,7 @@
 import React from "react";
 
 import './css/pagepokedex.css';
+import Pokemon from '../Pokemon/Pokemon';
 
 function PagePokedex( props ) {
     const { pokemons, loading } = props;
@@ -17,13 +18,9 @@ function PagePokedex( props ) {
                 <div>Carregando...</div>
             ) : 
                 <div className="pokedex_grid">
-                    {pokemons.map((pokemon, index) => {
+                    {pokemons && pokemons.map((pokemon, index) => {
                         return (
-                        <div className="ca">
-                            <div>Nome: {pokemon.name}</div>
-                            <div>Peso: {pokemon.wheight}</div>
-                            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-                        </div>
+                        <Pokemon />
                         )
                     })}
                 </div>
