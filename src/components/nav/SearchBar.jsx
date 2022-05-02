@@ -10,19 +10,17 @@ function SearchBar() {
     const [pokemon, setPokemon] = useState();
 
     const onChangeHandler = (e) => {
-        console.log("pokemon/", e.target.value);
         setSearch(e.target.value);
     }
 
     const onButtonClickHandler = () => {
         onSearchHandler(search);
-        console.log("pokemon/", search);
     }
 
-    const onSearchHandler = (pokemon) => {
-        const result = searchPokemon(pokemon);
+    const onSearchHandler = async (pokemon) => {
+        const result = await searchPokemon(pokemon);
         setPokemon(result);
-        console.log("pokemon ", result);
+
     }
 
     return (
@@ -30,8 +28,7 @@ function SearchBar() {
             <div className="searchbar_input">
                 <input type="text" placeholder="Buscar Pokemon" onChange={onChangeHandler}/>
             </div>
-            <button className="button_searchbar" onClick={onButtonClickHandler}><BiSearchAlt/></button>
-            {!pokemon}
+            <button className="button_searchbar" type="submit" onClick={onButtonClickHandler}><BiSearchAlt/></button>
         </div>
     );
 }
