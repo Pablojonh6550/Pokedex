@@ -17,10 +17,10 @@ function PagePokedex( props ) {
             {loading ? (
                 <div>Carregando...</div>
             ) : 
-                <div className="pokedex_grid">
-                    {pokemons && pokemons.map((pokemon, index) => {
+                <div className="pokemon_grid">
+                    {pokemons && pokemons.map(( pokemon ) => {
                         return (
-                        <Pokemon key={index} pokemon={pokemon}/>
+                        <Pokemon key={pokemon.id} pokemon={pokemon}/>
                         )
                     })}
                 </div>

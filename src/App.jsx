@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './App.css';
 
-import { getPokemons } from './components/Api/api';
+import { getPokemonData, getPokemons } from './components/Api/api';
 
 import NavBar from './components/nav/NavBar';
 import PokedexPage from './components/pokedex/PokedexPage';
@@ -15,7 +15,12 @@ function App() {
     try {
       setLoading(true);
       const data = await getPokemons();
-      setPokemons(data);
+      const response = data.results.map( async (pokemon) => {
+        return await getPokemonData(pokemon.url);
+      });
+
+      const results = await Promise.all(response)
+      setPokemons(results);
       setLoading(false);
 
     } catch (error) {
@@ -31,7 +36,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <PokedexPage pokemons={pokemons.results} loading={loading}/>
+      <PokedexPage pokemons={pokemons} loading={loading}/>
     </div>
   );
 }

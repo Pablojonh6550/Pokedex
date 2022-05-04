@@ -1,0 +1,28 @@
+.pokemon_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon_card {
+    width: 27rem;
+    height: 7.3rem;
+    display: flex;
+    border-radius: 0.5rem;
+    box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px, rgb(0 0 0 / 30%) 0px 16px 10px -10px;
+    cursor: pointer;
+    padding: 0.1rem;
+    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    border: transparent;
+
+}
+
+.pokemon_image_container {
+   
+}
+
+.pokemon_image {
+    width: 115px;
+    opacity: 1;
+
+}
