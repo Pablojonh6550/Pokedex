@@ -2,11 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .pokemon_card_hover {
     width: 25rem;
     height: 7.3rem;
-    background-image: linear-gradient(163deg, #de5249 0%, #006492 100%);
+    background-image: linear-gradient(163deg, #de5249 0%, #1b98e0 100%);
     border-radius: 0.5rem;
     transition: all 0.5s ease;
 }
