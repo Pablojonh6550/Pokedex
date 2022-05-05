@@ -20,10 +20,16 @@
     border-radius: 0.5rem;
     box-shadow: rgb(0 0 0 / 100%) 0px 10px 30px -19px, rgb(0 0 0 / 80%) 0px 10px 10px -15px;
     cursor: pointer;
-    padding: 0.1rem;
     transition: all 0.3s ease;
     border: transparent;
+    position: relative;
 
+}
+.pokemon_card_data {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 0.4rem;
 }
 
 .pokemon_card:hover {
@@ -37,11 +43,89 @@
 }
 
 .pokemon_image_container {
-   
+    border-radius: 0.5rem;
+    width: auto;
+    height: auto;
+    border-right: 2px solid #222;
+    border-bottom: 2px solid #222;
+    margin-right: 1rem;
+    
 }
 
 .pokemon_image {
     width: 115px;
-    opacity: 1;
 
 }
+
+.pokemon_name_container {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 2rem;
+
+}
+
+.pokemon_name_container h3 {
+    margin-left: 0.5rem;
+    color: #1b98e0;
+    text-transform: capitalize;
+}
+
+.pokemon_name_container span {
+    color: #222;
+    font-weight: bold;
+}
+
+.type_container {
+    width: 150px;
+    height: 27px;
+
+    border: 1px solid slateblue;
+    display: flex;
+    border-radius: 2rem;
+    box-shadow: rgb(0 0 0 / 40%) 0px 60px 20px -10px, rgb(0 0 0 / 50%) 0px 15px 10px -10px;
+    padding: 0 1rem;
+
+}
+
+.type {
+    width: max-content;
+    height: max-content;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+}
+
+.btn_favorite_container {
+    margin-top: 4.2rem;
+    margin-left: 22rem;
+    position: absolute;
+}
+
+.btn_favorite {
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+    border-radius: 0.5rem;
+
+}
+
+.svg_btn {
+    font-size: 1.2rem;
+    color: #222;
+}
+
+.svg_btn:hover {
+    color: #de5249;
+
+}
+
+.grass {
+    background-image: url(../../../images/grass.png);
+}
+
