@@ -9,7 +9,7 @@ function Pagination( props ) {
         <div className="pagination_container">
             <button className="arrow" onClick={onLeftClick}><BsFillArrowLeftCircleFill /></button>
             <div className="pagination_page_number">
-                <span>{page}1 </span> <span>/</span> <span>50{totalPage}</span>
+                <span>{page}</span> <span>/</span> <span>{totalPage}</span>
             </div>
             <button className="arrow" onClick={onRightClick}><BsFillArrowRightCircleFill /></button>
         </div>

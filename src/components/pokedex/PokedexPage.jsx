@@ -13,7 +13,7 @@ function PagePokedex( props ) {
                 <div className="pokedex_name">
                     <h1>Pokedex</h1>
                 </div>
-                <div><Pagination /></div>
+                <div><Pagination page="1" totalPage="150" /></div>
             </div>
             {loading ? (
                 <div>Carregando...</div>
