@@ -24,7 +24,7 @@ function Pokemon( props ) {
                         <div className="pokemon_card_data">
                             <div className="pokemon_name_container">
                                 <h3>{pokemon.name}</h3>
-                                <div className={`pokemon_number ${pokemon.types.map((type) => {return (type.type.name)})}`}>
+                                <div className={`pokemon_number ${pokemon.types.length == 2 ? pokemon.types.reduce((type) => {return (type.type.name)}) : pokemon.types.map((type) => {return (type.type.name)})}`}>
                                     <span>#{pokemon.id}</span> 
                                 </div>
                             </div>

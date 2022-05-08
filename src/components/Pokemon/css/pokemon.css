@@ -138,7 +138,7 @@
 
 }
 
-.grasspoison{
+.grass{
     background-color: #00FA9A;
 }
 
@@ -168,4 +168,40 @@
 
 .ground {
     background-color: #D2B48C;
+}
+
+.fighting {
+    background-color: #d84727;
+}
+
+.psychic {
+    background-color: #d81159;
+}
+
+.rock {
+    background-color: #bc8a5f;
+}
+
+.ghost {
+    background-color: #5a189a;
+}
+
+.dragon {
+    background-color: #5390d9;
+}
+
+.fairy {
+    background-color: #ff97b7;
+}
+
+.steel {
+    background-color: #7d8597;
+}
+
+.dark {
+    background-color: #2b2d42;
+}
+
+.ice {
+    background-color: #64dfdf;
 }

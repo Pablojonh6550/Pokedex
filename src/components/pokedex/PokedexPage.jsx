@@ -1,7 +1,8 @@
 import React from "react";
 
 import './css/pagepokedex.css';
-import Pokemon from '../Pokemon/Pokemon';
+import Pokemon from '../pokemon/Pokemon';
+import Pagination from "../pagination/Pagination";
 
 function PagePokedex( props ) {
     const { pokemons, loading } = props;
@@ -12,7 +13,7 @@ function PagePokedex( props ) {
                 <div className="pokedex_name">
                     <h1>Pokedex</h1>
                 </div>
-                <div>Paginação:</div>
+                <div><Pagination /></div>
             </div>
             {loading ? (
                 <div>Carregando...</div>
