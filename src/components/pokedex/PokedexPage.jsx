@@ -16,7 +16,7 @@ function PagePokedex( props ) {
     const onRightClickHandler = () => {
         if( page+1 !== totalPages ) {
             setPage(page+1);
-            console.log(page);
+            // console.log(page);
         }
     }
     return (
