@@ -10,7 +10,6 @@ import PokedexPage from './components/pokedex/PokedexPage';
 function App() {
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
-    const [proximo, setProximo] = useState(0);
     const [loading, setLoading] = useState(false);
     const [pokemons, setPokemons] = useState([]);
 
@@ -19,7 +18,7 @@ function App() {
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const data = await getPokemons(itensPerPage, proximo);
+      const data = await getPokemons(itensPerPage, itensPerPage * page);
       const response = data.results.map( async (pokemon) => {
         return await getPokemonData(pokemon.url);
       });
@@ -28,7 +27,7 @@ function App() {
       setPokemons(results);
       setLoading(false);
       setTotalPages(Math.ceil(data.count / itensPerPage));
-      setProximo(itensPerPage * page);
+      
       
 
     } catch (error) {
