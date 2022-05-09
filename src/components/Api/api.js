@@ -1,3 +1,5 @@
+
+// Buscar pokémon 
 export const searchPokemon = async (pokemon) => {
 
     try {
@@ -11,6 +13,7 @@ export const searchPokemon = async (pokemon) => {
 
 }
 
+//Requisição todos os pokémons {com limit e ordem de inicio} 
 export const getPokemons = async (limit, offset) => {
 
     try {
@@ -23,7 +26,36 @@ export const getPokemons = async (limit, offset) => {
     }
 
 }
+
+//Requisição dados de cada pokemon
 export const getPokemonData = async (url) => {
+
+    try {
+        
+        const request = await fetch(url)
+        return await request.json()
+        
+    } catch (error) {
+        console.log("error: ", error);
+    }
+
+}
+
+//Requisição regiões
+export const getPokemonRegion = async () => {
+
+    try {
+        let url = `https://pokeapi.co/api/v2/region`;
+        const request = await fetch(url)
+        return await request.json()
+        
+    } catch (error) {
+        console.log("error: ", error);
+    }
+
+}
+
+export const getRegionData = async (url) => {
 
     try {
         

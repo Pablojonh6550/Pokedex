@@ -10,3 +10,7 @@
     text-decoration: none;
     font-family: Poppins, sans-serif;
 }
+
+body {
+    background-image: url('./images/back.webp');
+}

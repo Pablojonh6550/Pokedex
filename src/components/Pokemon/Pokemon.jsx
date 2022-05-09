@@ -29,7 +29,7 @@ function Pokemon( props ) {
                                 </div>
                             </div>
 
-                            <div className="type_container">
+                            <div className={`type_container ${pokemon.types.length === 2 ? pokemon.types.reduce((type) => {return (type.type.name)}) : pokemon.types.map((type) => {return (type.type.name)})}`}>
                                 <div className="type">
                                     {pokemon.types.map((type, index) => {                            
                                         return (

@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Link } from 'react-router-dom';
 import './css/navbar.css';
 
 import { AiFillHome, AiFillHeart } from 'react-icons/ai';
@@ -15,11 +16,11 @@ function NavBar() {
                     <div className="menu">
                         <div className="menu_item">
                             <AiFillHome />
-                            <a href="#">Home</a> 
+                            <Link to="/">Home</Link>
                         </div>
                         <div className="menu_item">
                             <AiFillHeart />
-                            <a href="#">Favorite</a> 
+                            <Link to="/favorite">Favorite</Link> 
                         </div>
                         <SearchBar />
                     </div>
