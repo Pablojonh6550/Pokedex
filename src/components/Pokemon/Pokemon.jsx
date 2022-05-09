@@ -17,14 +17,14 @@ function Pokemon( props ) {
             <div className="pokemon_card_hover">
                 <div className="pokemon_card">
                     
-                        <div className={`pokemon_image_container ${pokemon.types.length == 2 ? pokemon.types.reduce((type) => {return (type.type.name)}) : pokemon.types.map((type) => {return (type.type.name)})}`}>
+                        <div className={`pokemon_image_container ${pokemon.types.length === 2 ? pokemon.types.reduce((type) => {return (type.type.name)}) : pokemon.types.map((type) => {return (type.type.name)})}`}>
                             <img className="pokemon_image" src={pokemon.sprites.front_default} alt={pokemon.name} />
                         </div>
          
                         <div className="pokemon_card_data">
                             <div className="pokemon_name_container">
                                 <h3>{pokemon.name}</h3>
-                                <div className={`pokemon_number ${pokemon.types.length == 2 ? pokemon.types.reduce((type) => {return (type.type.name)}) : pokemon.types.map((type) => {return (type.type.name)})}`}>
+                                <div className={`pokemon_number ${pokemon.types.length === 2 ? pokemon.types.reduce((type) => {return (type.type.name)}) : pokemon.types.map((type) => {return (type.type.name)})}`}>
                                     <span>#{pokemon.id}</span> 
                                 </div>
                             </div>
@@ -33,7 +33,7 @@ function Pokemon( props ) {
                                 <div className="type">
                                     {pokemon.types.map((type, index) => {                            
                                         return (
-                                        <div key={index} className="pokemon_type_text">{type.type.name} {console.log(type.type.name)}</div>
+                                        <div key={index} className="pokemon_type_text">{type.type.name}</div>
                                         
                                         ); 
                                     })}

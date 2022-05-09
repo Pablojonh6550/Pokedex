@@ -4,12 +4,12 @@ import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-ico
 import './css/pagination.css';
 
 function Pagination( props ) {
-    const { page, totalPage, onLeftClick, onRightClick} = props;
+    const { page, totalPages, onLeftClick, onRightClick} = props;
     return (
         <div className="pagination_container">
             <button className="arrow" onClick={onLeftClick}><BsFillArrowLeftCircleFill /></button>
             <div className="pagination_page_number">
-                <span>{page}</span> <span>/</span> <span>{totalPage}</span>
+                <span>{page}</span> <span>/</span> <span>{totalPages}</span>
             </div>
             <button className="arrow" onClick={onRightClick}><BsFillArrowRightCircleFill /></button>
         </div>
