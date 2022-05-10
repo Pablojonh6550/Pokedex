@@ -57,7 +57,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<Home regions={regions}/>}/>
-      <Route path="/favorite" element={<PokedexPage pokemons={pokemons} loading={loading} page={page} totalPages={totalPages} setPage={setPage} />} />        
+      <Route path="/pokedex_all" element={<PokedexPage pokemons={pokemons} loading={loading} page={page} totalPages={totalPages} setPage={setPage} />} />        
       </Routes>
       {/* <PokedexPage pokemons={pokemons} loading={loading} page={page} totalPages={totalPages} setPage={setPage} /> */}
     </Router>

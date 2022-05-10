@@ -33,7 +33,7 @@ function Pokemon( props ) {
                                 <div className="type">
                                     {pokemon.types.map((type, index) => {                            
                                         return (
-                                        <div key={index} className="pokemon_type_text">{type.type.name}</div>
+                                        <div key={index} className="pokemon_type_text"><span>{type.type.name}</span></div>
                                         
                                         ); 
                                     })}

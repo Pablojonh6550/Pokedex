@@ -9,5 +9,26 @@
     display: grid;
     grid-template-columns: repeat(4, 14rem);
     gap: 2rem;
-    margin-top: 10%;
+    margin-top: 3rem;
+
+}
+
+.home_region_all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    
+}
+
+.home_region_name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.home_region_name h1 {
+    font-weight: 800;
+    
 }
