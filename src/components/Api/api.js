@@ -67,3 +67,29 @@ export const getRegionData = async (url) => {
     }
 
 }
+
+export const getPokemonRegionUrl = async () => {
+
+    try {
+        let url = `https://pokeapi.co/api/v2/pokedex`;
+        const request = await fetch(url)
+        return await request.json()
+        
+    } catch (error) {
+        console.log("error: ", error);
+    }
+
+}
+
+export const getPokemonRegionData = async (url) => {
+
+    try {
+        
+        const request = await fetch(url)
+        return await request.json()
+        
+    } catch (error) {
+        console.log("error: ", error);
+    }
+
+}

@@ -5,7 +5,7 @@ import './css/pokemon.css';
 
 function Pokemon( props ) {
     const { pokemon } = props;
-
+    const type_css = pokemon.types.map((type) => {return type.type.name})
     const onHeartClick = () => {
         console.log("favorite");
         
@@ -29,16 +29,13 @@ function Pokemon( props ) {
                                 </div>
                             </div>
 
-                            <div className={`type_container ${pokemon.types.length === 2 ? pokemon.types.reduce((type) => {return (type.type.name)}) : pokemon.types.map((type) => {return (type.type.name)})}`}>
-                                <div className="type">
+                                <div className={`type_container `}>
                                     {pokemon.types.map((type, index) => {                            
                                         return (
-                                        <div key={index} className="pokemon_type_text"><span>{type.type.name}</span></div>
-                                        
+                                        <div key={index} className={`type ${type_css === type.type.name ? '' : type.type.name}`}><span>{type.type.name}</span></div>
                                         ); 
                                     })}
                                 </div>
-                            </div>
 
                         </div>
                         <div className="btn_favorite_container">

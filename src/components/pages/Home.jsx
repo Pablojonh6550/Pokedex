@@ -6,7 +6,10 @@ import './css/home.css';
 
 function Home( props ) {
     const { regions } = props;
-    
+    // const id = regions.map((region) => {
+    //     return region.id;
+    // })
+    // setId(id);
     return (
         <div className="home_comtainer_main">
             <div className="home_region_all">
@@ -18,7 +21,7 @@ function Home( props ) {
             <div className="home_container">
             <div className="home_cards">
                 {regions && regions.map((region) => {
-                    return (<CardRegion key={region.id} region={region.name}/>)
+                    return (<Link to="/kanto"><CardRegion key={region.id} region={region.name} /></Link>)
                 })}
             </div>
             
