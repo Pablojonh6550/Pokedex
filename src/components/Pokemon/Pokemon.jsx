@@ -2,25 +2,25 @@ import React, { useState } from "react";
 import { AiFillHeart } from 'react-icons/ai';
 
 import './css/pokemon.css';
-import PokemonData from "./PokemonData";
 
 function Pokemon( props ) {
-    const { pokemon } = props;
+    const { pokemon, setModalVisible } = props;
     const type_css = pokemon.types.map((type) => {return type.type.name});
-    const [modalVisible, setModalVisible] = useState(false);
+    
 
     const onHeartClick = () => {
         console.log("favorite");
-        setModalVisible(prev => !prev);
 
     }
 
-
+    const onModal = () => {
+        setModalVisible(prev => !prev);
+    }
 
     return (
         <div className="pokemon_container" >
             <div className="pokemon_card_hover">
-                <div className="pokemon_card">
+                <div className="pokemon_card" onClick={onModal}>
                     
                         <div className={`pokemon_image_container ${pokemon.types.length === 2 ? pokemon.types.reduce((type) => {return (type.type.name)}) : pokemon.types.map((type) => {return (type.type.name)})}`}>
                             <img className="pokemon_image" src={pokemon.sprites.front_default} alt={pokemon.name} />
@@ -51,7 +51,7 @@ function Pokemon( props ) {
                         
                 </div>
             </div>
-            {/* <PokemonData modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+            
         </div>
         
     );

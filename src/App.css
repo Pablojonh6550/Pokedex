@@ -1,0 +1,6 @@
+.app_container {
+    width: auto;
+    height: auto;
+    flex-wrap: wrap;
+    padding-top: 5rem;
+}

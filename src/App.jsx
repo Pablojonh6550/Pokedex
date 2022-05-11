@@ -70,12 +70,14 @@ function App() {
   return (
     <Router>
       <NavBar />
+      <div className='app_container'>
       <Routes>
         <Route path='/' element={<Home regions={regions}/>}/>
         <Route path="/pokedex_all" element={<PokedexPage pokemons={pokemons} loading={loading} page={page} totalPages={totalPages} setPage={setPage} />} />        
         <Route path='/kanto' element={<PokedexPageRegion pokemonsRegionAll={pokemonRegion} loading={loading} page={0} totalPages={0} setPage={0} />}/>
         <Route path='/favorite' element={<PokemonData />}/>
       </Routes>
+      </div>
     </Router>
   );
 }
