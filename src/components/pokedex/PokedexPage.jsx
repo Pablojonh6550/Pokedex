@@ -7,7 +7,7 @@ import Loading from "../loading/Loading";
 
 function PagePokedex( props ) {
     const { pokemons, loading, page, totalPages, setPage } = props;
-    
+
     const onLeftClickHandler = () => {
         if( page > 0 ) {
             setPage(page - 1);

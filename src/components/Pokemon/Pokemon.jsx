@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiFillHeart } from 'react-icons/ai';
 
 import './css/pokemon.css';
+import PokemonData from "./PokemonData";
 
 function Pokemon( props ) {
     const { pokemon } = props;
-    const type_css = pokemon.types.map((type) => {return type.type.name})
+    const type_css = pokemon.types.map((type) => {return type.type.name});
+    const [modalVisible, setModalVisible] = useState(false);
+
     const onHeartClick = () => {
         console.log("favorite");
-        
+        setModalVisible(prev => !prev);
+
     }
+
 
 
     return (
@@ -43,9 +48,12 @@ function Pokemon( props ) {
                                 <AiFillHeart className="svg_btn"/>
                             </button>
                         </div>
+                        
                 </div>
             </div>
+            {/* <PokemonData modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
         </div>
+        
     );
 
 }
