@@ -40,7 +40,9 @@ function PagePokedex( props ) {
                         <Pokemon key={pokemon.id} pokemon={pokemon} setModalVisible={setModalVisible} />
                         )
                     })}
-                    <PokemonData modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+                    {pokemons && pokemons.map((pokemon) => {
+                        return ( <PokemonData key={pokemon.id} modalVisible={modalVisible} setModalVisible={setModalVisible} pokemon={pokemon} name={pokemon.name}/>)
+                    })}
                 </div>
             }
         </div>
