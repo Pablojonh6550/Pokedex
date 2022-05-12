@@ -72,14 +72,14 @@ function App() {
   }, [page]);
   
   const updateFavoritePokemon = (name) => {
-    const updateFavorites = [...favorites]
+    const updatedFavorites = [...favorites]
     const favoriteIndex = favorites.indexOf(name)
     if(favoriteIndex >= 0) {
-      updateFavorites.slice(favoriteIndex,1);
-    }else{
-      updateFavorites.push(name);
+      updatedFavorites.splice(favoriteIndex, 1);
+    }else {
+      updatedFavorites.push(name);
     }
-    setFavorites(updateFavorites);
+    setFavorites(updatedFavorites);
   }
 
   return (
