@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiFillHeart } from 'react-icons/ai';
 
 import './css/pokemon.css';

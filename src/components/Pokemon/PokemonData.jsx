@@ -4,7 +4,7 @@ import './css/pokemondata.css';
 
 
 function PokemonData( props ) {
-    const { modalVisible, setModalVisible, pokemon, name} = props;
+    const { modalVisible, setModalVisible, name} = props;
 
     const closeModal = () => {
         setModalVisible(false);
