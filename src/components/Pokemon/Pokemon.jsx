@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiFillHeart } from 'react-icons/ai';
+import FavoriteContext from "../contexts/FavoriteContext";
 
 import './css/pokemon.css';
 
 function Pokemon( props ) {
+
+    const { favoritePokemon, updateFavoritePokemon } = useContext(FavoriteContext);
     const { pokemon, setModalVisible } = props;
     const type_css = pokemon.types.map((type) => {return type.type.name});
     
+    const favorite_class = favoritePokemon.includes(pokemon.name) ? 'svg_color_on' : 'svg_color_off';
 
     const onHeartClick = () => {
-        console.log("favorite");
-
+        updateFavoritePokemon(pokemon.name);
+        
     }
 
     const onModal = () => {
@@ -21,8 +25,8 @@ function Pokemon( props ) {
     return (
         <div className="pokemon_container" >
             <div className="pokemon_card_hover">
-                <div className="pokemon_card" onClick={onModal}>
-                    
+                <div className="pokemon_card" >
+                    <div className="pokemon_click" onClick={onModal}>
                         <div className={`pokemon_image_container ${pokemon.types.length === 2 ? pokemon.types.reduce((type) => {return (type.type.name)}) : pokemon.types.map((type) => {return (type.type.name)})}`}>
                             <img className="pokemon_image" src={pokemon.sprites.front_default} alt={pokemon.name} />
                         </div>
@@ -44,9 +48,10 @@ function Pokemon( props ) {
                                 </div>
 
                         </div>
+                    </div>    
                         <div className="btn_favorite_container">
                             <button className="btn_favorite" onClick={onHeartClick}>
-                                <AiFillHeart className="svg_btn"/>
+                                <AiFillHeart className={`svg_btn ${favorite_class}`}/>
                             </button>
                         </div>
                         

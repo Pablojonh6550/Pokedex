@@ -70,21 +70,26 @@ function App() {
       fetchPokemons();
 
   }, [page]);
-
-
-
-
   
+  const updateFavoritePokemon = (name) => {
+    const updateFavorites = [...favorites]
+    const favoriteIndex = favorites.indexOf(name)
+    if(favoriteIndex >= 0) {
+      updateFavorites.slice(favoriteIndex,1);
+    }else{
+      updateFavorites.push(name);
+    }
+    setFavorites(updateFavorites);
+  }
+
   return (
-    
+    <>
       <FavoriteProvider
-        value={
-          {
-          favoritePokemon: favorites,
-          updateFavoritePokemon: updateFavoritePokemon,
-          }
-        }
-      >
+      value={{
+        favoritePokemon: favorites,
+        updateFavoritePokemon: updateFavoritePokemon,
+      }}
+    >
     <Router>
       <NavBar />
       <div className='app_container'>
@@ -96,7 +101,8 @@ function App() {
       </Routes>
       </div>
     </Router>
-    
+    </FavoriteProvider>
+    </>
   );
 }
 

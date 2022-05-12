@@ -12,6 +12,9 @@
     border-radius: 0.5rem;
     transition: all 0.5s ease;
 }
+.pokemon_click {
+    display: flex;
+}
 
 .pokemon_card {
     width: 25rem;
@@ -26,6 +29,7 @@
     position: relative;
 
 }
+
 .pokemon_card_data {
     
     display: flex;
@@ -134,13 +138,16 @@
 
 .svg_btn {
     font-size: 1.2rem;
+}
+
+.svg_color_off {
     color: #222;
 }
 
-.svg_btn:hover {
+.svg_color_on {
     color: #de5249;
-
 }
+
 
 /* COLOR TYPE */
 .grass{
