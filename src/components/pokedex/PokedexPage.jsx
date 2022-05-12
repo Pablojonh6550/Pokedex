@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import './css/pagepokedex.css';
 import Pokemon from '../pokemon/Pokemon';
 import Pagination from "../pagination/Pagination";
@@ -10,6 +9,7 @@ function PagePokedex( props ) {
     const { pokemons, loading, page, totalPages, setPage } = props;
 
     const [modalVisible, setModalVisible] = useState(false);
+    
 
     const onLeftClickHandler = () => {
         if( page > 0 ) {

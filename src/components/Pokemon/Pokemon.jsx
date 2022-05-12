@@ -14,7 +14,8 @@ function Pokemon( props ) {
     }
 
     const onModal = () => {
-        setModalVisible(prev => !prev);
+        setModalVisible(prev => !prev);   
+         
     }
 
     return (

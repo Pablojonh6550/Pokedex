@@ -13,7 +13,7 @@ function Home( props ) {
     return (
         <div className="home_comtainer_main">
             <div className="home_region_all">
-                <Link to="/pokedex_all"><CardRegion key="all" region="Pokedex"/></Link>
+                <Link to="/pokedex_all"><CardRegion key='9' region="Pokedex"/></Link>
             </div>
             <div className="home_region_name">
                 <h1>Regiões</h1>

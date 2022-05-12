@@ -20,6 +20,7 @@ function App() {
     const [pokemonRegion, setPokemonRegion] = useState([]);
     // const [id, setId] = useState(0);
 
+    
     const itensPerPage = 30;
     
   const fetchPokemons = async () => {
