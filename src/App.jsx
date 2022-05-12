@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 
 import { getPokemonData, getPokemonRegion, getPokemonRegionData, getPokemonRegionUrl, getPokemons, getRegionData } from './components/Api/api';
+import { FavoriteProvider } from './components/contexts/FavoriteContext';
 
 import NavBar from './components/nav/NavBar';
 import Home from './components/pages/Home';
@@ -16,8 +17,10 @@ function App() {
     const [totalPages, setTotalPages] = useState(0);
     const [loading, setLoading] = useState(false);
     const [pokemons, setPokemons] = useState([]);
+    const [favorites, setFavorites] = useState([]);
     const [regions, setRegions] = useState([]);
     const [pokemonRegion, setPokemonRegion] = useState([]);
+
     // const [id, setId] = useState(0);
 
     
@@ -68,7 +71,20 @@ function App() {
 
   }, [page]);
 
+
+
+
+  
   return (
+    
+      <FavoriteProvider
+        value={
+          {
+          favoritePokemon: favorites,
+          updateFavoritePokemon: updateFavoritePokemon,
+          }
+        }
+      >
     <Router>
       <NavBar />
       <div className='app_container'>
@@ -80,6 +96,7 @@ function App() {
       </Routes>
       </div>
     </Router>
+    
   );
 }
 
