@@ -12,6 +12,8 @@ import PokedexPage from './components/pokedex/PokedexPage';
 import PokedexPageRegion from './components/pokedex/PokedexPageRegion';
 import PokemonData from './components/pokemon/PokemonData';
 
+const favoritesKey = "favorite";
+
 function App() {
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
@@ -60,9 +62,26 @@ function App() {
       console.log("fetchPokemon error: ", error);
     }
   }
+  
+  const loadFavoritePokemons = () => {
+    try {
+      setLoading(true);
 
-  
-  
+      const pokemonFavoritesKey = JSON.parse(window.localStorage.getItem(favoritesKey)) || []; 
+      setFavorites(pokemonFavoritesKey);
+    } catch (error) {
+      console.log("loadFavoritePokemons error: ", error);
+    }
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000)
+      loadFavoritePokemons();
+       
+  }, []);
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -79,6 +98,7 @@ function App() {
     }else {
       updatedFavorites.push(name);
     }
+    window.localStorage.setItem(favoritesKey, JSON.stringify(updatedFavorites));
     setFavorites(updatedFavorites);
   }
 

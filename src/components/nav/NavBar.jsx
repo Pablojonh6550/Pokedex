@@ -11,10 +11,9 @@ import FavoriteContext from "../contexts/FavoriteContext";
 function NavBar() {
     const { favoritePokemon } = useContext(FavoriteContext); 
     const logo_pokedex = 'https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png';
-
     return (
             <nav>
-                        <img src={logo_pokedex} alt="logo_pokedex" className="navbar_logo" />
+                    <img src={logo_pokedex} alt="logo_pokedex" className="navbar_logo" />
                     
                     <div className="menu">
                         <div className="menu_item">
