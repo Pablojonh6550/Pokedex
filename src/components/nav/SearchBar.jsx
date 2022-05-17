@@ -6,7 +6,7 @@ import './css/searchbar.css';
 
 function SearchBar() {
 
-    const [search, setSearch] = useState(""); 
+    const [search, setSearch] = useState("");
     const [pokemon, setPokemon] = useState();
 
     const onChangeHandler = (e) => {
@@ -26,9 +26,9 @@ function SearchBar() {
     return (
         <div className="searchbar_container">
             <div className="searchbar_input">
-                <input type="text" placeholder="Buscar Pokemon" onChange={onChangeHandler}/>
+                <input type="text" placeholder="Buscar Pokemon" onChange={onChangeHandler} />
             </div>
-            <button className="button_searchbar" type="submit" onClick={onButtonClickHandler}><BiSearchAlt/></button>
+            <button className="button_searchbar" type="submit" onClick={onButtonClickHandler}><BiSearchAlt /></button>
         </div>
     );
 }

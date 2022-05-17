@@ -4,7 +4,7 @@
     margin: 0.5rem auto;
     padding: 0 2rem;
     align-items: center;
-    
+
 }
 
 .searchbar_container input {
@@ -12,7 +12,7 @@
     background-color: #fff;
     border-radius: 7px 0 0 7px;
     padding-left: 0.5rem;
-    font-size:14px;
+    font-size: 14px;
     border: 1px solid #fff;
     height: 2rem;
     width: 13rem;
@@ -20,12 +20,12 @@
 
 .button_searchbar {
 
-    border:none;
+    border: none;
     cursor: pointer;
     height: 2rem;
     width: 4rem;
-    border-radius:0 7px 7px 0;
-    background:#666;
+    border-radius: 0 7px 7px 0;
+    background: #666;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,5 @@
 .button_searchbar:hover {
     background: #fff;
     color: #666;
-    
-}
 
-   
+}

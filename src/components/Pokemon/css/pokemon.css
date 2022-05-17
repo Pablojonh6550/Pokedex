@@ -2,9 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;    
-    
+    margin-top: 1rem;
+
 }
+
 .pokemon_card_hover {
     width: 25rem;
     height: 7.3rem;
@@ -12,6 +13,7 @@
     border-radius: 0.5rem;
     transition: all 0.5s ease;
 }
+
 .pokemon_click {
     display: flex;
 }
@@ -31,7 +33,7 @@
 }
 
 .pokemon_card_data {
-    
+
     display: flex;
     flex-direction: column;
     padding: 0.4rem;
@@ -58,7 +60,7 @@
 
 .pokemon_image {
     width: 115px;
-    
+
 }
 
 .pokemon_name_container {
@@ -92,7 +94,7 @@
     border-radius: 0 0.5rem 0 0.5rem;
     text-shadow: 0 1px 1px rgb(255 255 255 / 70%);
     font-weight: 600;
-    
+
 }
 
 .type_container {
@@ -131,7 +133,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer; 
+    cursor: pointer;
     border-radius: 0.5rem;
 
 }
@@ -150,74 +152,74 @@
 
 
 /* COLOR TYPE */
-.grass{
-    background-image:linear-gradient(160deg, #00FA9A 40%, #ffffff 110%);
+.grass {
+    background-image: linear-gradient(160deg, #00FA9A 40%, #ffffff 110%);
 }
 
 .water {
-    background-image:linear-gradient(160deg, #87CEFA 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #87CEFA 40%, #ffffff 110%);
 }
 
 .fire {
-    background-image:linear-gradient(160deg, #f08040 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #f08040 40%, #ffffff 110%);
 }
 
 .bug {
-    background-image:linear-gradient(160deg, #8FBC8B 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #8FBC8B 40%, #ffffff 110%);
 }
 
 .normal {
-    background-image:linear-gradient(160deg, #D3D3B1 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #D3D3B1 40%, #ffffff 110%);
 }
 
 .flying {
-    background-image:linear-gradient(160deg, #DCDCDC 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #DCDCDC 40%, #ffffff 110%);
 }
 
 .poison {
-    background-image:linear-gradient(160deg, #9370DB 40%, #ffffff 120%);
+    background-image: linear-gradient(160deg, #9370DB 40%, #ffffff 120%);
 }
 
 .electric {
-    background-image:linear-gradient(160deg, #FFD709 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #FFD709 40%, #ffffff 110%);
 }
 
 .ground {
-    background-image:linear-gradient(160deg, #D2B48C 40%, #ffffff 120%);
+    background-image: linear-gradient(160deg, #D2B48C 40%, #ffffff 120%);
 }
 
 .fighting {
-    background-image:linear-gradient(160deg, #c02035 40%, #ffffff 100%);
+    background-image: linear-gradient(160deg, #c02035 40%, #ffffff 100%);
 }
 
 .psychic {
-    background-image:linear-gradient(160deg, #f85868 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #f85868 40%, #ffffff 110%);
 }
 
 .rock {
-    background-image:linear-gradient(160deg, #bc8a5f 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #bc8a5f 40%, #ffffff 110%);
 }
 
 .ghost {
-    background-image:linear-gradient(160deg, #705898 40%, #ffffff 120%);
+    background-image: linear-gradient(160deg, #705898 40%, #ffffff 120%);
 }
 
 .dragon {
-    background-image:linear-gradient(160deg, #5390d9 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #5390d9 40%, #ffffff 110%);
 }
 
 .fairy {
-    background-image:linear-gradient(160deg, #ff97b7 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #ff97b7 40%, #ffffff 110%);
 }
 
 .steel {
-    background-image:linear-gradient(160deg, #b8b8d0 40%, #ffffff 110%);
+    background-image: linear-gradient(160deg, #b8b8d0 40%, #ffffff 110%);
 }
 
 .dark {
-    background-image:linear-gradient(160deg, #2F4F4F 40%, #ffffff 130%);
+    background-image: linear-gradient(160deg, #2F4F4F 40%, #ffffff 130%);
 }
 
 .ice {
-    background-image:linear-gradient(160deg, #98d8d8 40%, #ffffff 120%);
+    background-image: linear-gradient(160deg, #98d8d8 40%, #ffffff 120%);
 }
