@@ -7,7 +7,6 @@ import './css/searchbar.css';
 function SearchBar() {
 
     const [search, setSearch] = useState("");
-    const [pokemon, setPokemon] = useState();
 
     const onChangeHandler = (e) => {
         setSearch(e.target.value);
@@ -18,8 +17,7 @@ function SearchBar() {
     }
 
     const onSearchHandler = async (pokemon) => {
-        const result = await searchPokemon(pokemon);
-        setPokemon(result);
+        // const result = await searchPokemon(pokemon);
 
     }
 
