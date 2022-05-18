@@ -8,9 +8,13 @@ import { AiFillHome, AiFillHeart } from 'react-icons/ai';
 import SearchBar from "./SearchBar";
 import FavoriteContext from "../contexts/FavoriteContext";
 
-function NavBar() {
+function NavBar(props) {
+
+    const { onSearch } = props;
+    
     const { favoritePokemon } = useContext(FavoriteContext);
     const logo_pokedex = 'https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png';
+
     return (
         <nav>
             <img src={logo_pokedex} alt="logo_pokedex" className="navbar_logo" />
@@ -24,7 +28,7 @@ function NavBar() {
                     <AiFillHeart />
                     <Link to="/favorite">Favorite ({favoritePokemon.length})</Link>
                 </div>
-                <SearchBar />
+                <SearchBar onSearchHandler={onSearch} />
             </div>
         </nav>
     );

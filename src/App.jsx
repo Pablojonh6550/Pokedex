@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
-import { getPokemonData, getPokemonRegion, getPokemonRegionData, getPokemonRegionUrl, getPokemons, getRegionData } from './components/Api/api';
+import { getPokemonData, getPokemonRegion, getPokemonRegionData, getPokemonRegionUrl, getPokemons, getRegionData, searchPokemon } from './components/Api/api';
 import { FavoriteProvider } from './components/contexts/FavoriteContext';
 
 import NavBar from './components/nav/NavBar';
@@ -18,6 +18,7 @@ function App() {
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [notFound, setNotFound] = useState(false);
   const [pokemons, setPokemons] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [regions, setRegions] = useState([]);
@@ -102,6 +103,24 @@ function App() {
     setFavorites(updatedFavorites);
   }
 
+  const onSearchPokemon = async (pokemon) => {
+    if (!pokemon) {
+      return fetchPokemons();
+    }
+    setLoading(true);
+    setNotFound(false);
+
+    const result = await searchPokemon(pokemon);
+    if (!result) {
+      setNotFound(true);
+    } else {
+      setTimeout(() => {
+        setPokemons([result]);
+      }, 3000)
+    }
+    setLoading(false);
+  }
+
   return (
     <>
       <FavoriteProvider
@@ -111,13 +130,13 @@ function App() {
         }}
       >
         <Router>
-          <NavBar />
+          <NavBar onSearch={onSearchPokemon} />
           <div className='app_container'>
             <Routes>
               <Route path='/' element={<Home regions={regions} />} />
               <Route path="/pokedex_all" element={<PokedexPage pokemons={pokemons} loading={loading} page={page} totalPages={totalPages} setPage={setPage} />} />
               <Route path='/kanto' element={<PokedexPageRegion pokemonsRegionAll={pokemonRegion} loading={loading} page={0} totalPages={0} setPage={0} />} />
-              <Route path='/favorite' element={<PokemonData />} />
+              {/* <Route path='/favorite' element={} /> */}
             </Routes>
           </div>
         </Router>

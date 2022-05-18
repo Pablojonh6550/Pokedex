@@ -1,24 +1,25 @@
 import React from "react";
 import { useState } from 'react';
 import { BiSearchAlt } from 'react-icons/bi';
-import { searchPokemon } from '../Api/api';
+
 import './css/searchbar.css';
 
-function SearchBar() {
-
+function SearchBar( props ) {
+    const {onSearchHandler} = props;
     const [search, setSearch] = useState("");
 
     const onChangeHandler = (e) => {
         setSearch(e.target.value);
+        console.log(e.target.value)
+        if(e.target.value === 0) {
+            onSearchHandler(undefined);
+        }
+    
     }
 
     const onButtonClickHandler = () => {
         onSearchHandler(search);
-    }
-
-    const onSearchHandler = async (pokemon) => {
-        // const result = await searchPokemon(pokemon);
-
+        console.log("foi")
     }
 
     return (
