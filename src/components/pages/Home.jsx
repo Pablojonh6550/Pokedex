@@ -5,7 +5,7 @@ import CardRegion from "../page_components/CardRegion";
 import './css/home.css';
 
 function Home(props) {
-    const { regions, setVisible } = props;
+    const { setVisible } = props;
 
     const onVisible = () => {
         setVisible(true);
@@ -13,18 +13,19 @@ function Home(props) {
     return (
         <div className="home_comtainer_main">
             <div className="home_region_all">
-                <Link to="/pokedex_all" onClick={onVisible} ><CardRegion key='9' region="Pokedex" /></Link>
+                <Link to="/pokedex" onClick={onVisible} ><CardRegion key='0' region="Pokedex" /></Link>
             </div>
-            <div className="home_region_name">
-                <h1>Regiões</h1>
-            </div>
+            
             <div className="home_container">
                 <div className="home_cards">
-                    {regions && regions.map((region) => {
-                        return (<Link to="/kanto"><CardRegion key={region.id} region={region.name} /></Link>)
-                    })}
+                 <Link to="/region"><CardRegion key='1' region="Regiões" /></Link>
+                
+                 <Link to="/fruit"><CardRegion key='2' region="Frutas" /></Link>
+                
+                 <Link to="/itens"><CardRegion key='3' region="Itens" /></Link>
+               
+                 <Link to="/"><CardRegion key='4' region="algo" /></Link>
                 </div>
-
             </div>
         </div>
     );

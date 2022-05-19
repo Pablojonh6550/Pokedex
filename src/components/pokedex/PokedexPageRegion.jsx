@@ -1,7 +1,6 @@
 import React from "react";
 
 import './css/pagepokedex.css';
-// import Pokemon from '../pokemon/Pokemon';
 import Pagination from "../pagination/Pagination";
 import Loading from "../loading/Loading";
 
