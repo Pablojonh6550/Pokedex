@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import './css/navbar.css';
 
@@ -9,11 +9,15 @@ import SearchBar from "./SearchBar";
 import FavoriteContext from "../contexts/FavoriteContext";
 
 function NavBar(props) {
-
-    const { onSearch } = props;
     
+    const { onSearch, visible, setVisible } = props;
+
     const { favoritePokemon } = useContext(FavoriteContext);
     const logo_pokedex = 'https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png';
+
+    const onVisible = () => {
+        setVisible(false);
+    }
 
     return (
         <nav>
@@ -22,13 +26,16 @@ function NavBar(props) {
             <div className="menu">
                 <div className="menu_item">
                     <AiFillHome />
-                    <Link to="/">Home</Link>
+                    <Link to="/" onClick={onVisible}>Home</Link>
                 </div>
                 <div className="menu_item">
                     <AiFillHeart />
                     <Link to="/favorite">Favorite ({favoritePokemon.length})</Link>
                 </div>
-                <SearchBar onSearchHandler={onSearch} />
+                {visible ? (
+                    <SearchBar onSearchHandler={onSearch} />
+                ) : ''}
+                
             </div>
         </nav>
     );

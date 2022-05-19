@@ -23,16 +23,17 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [regions, setRegions] = useState([]);
   const [pokemonRegion, setPokemonRegion] = useState([]);
-
-  // const [id, setId] = useState(0);
+  const [visible, setVisible] = useState(false);
+  
 
 
   const itensPerPage = 30;
 
   const fetchPokemons = async () => {
     try {
+      
       setLoading(true);
-
+      setNotFound(false);
       // Pokemon
       const data = await getPokemons(itensPerPage, itensPerPage * page);
       const response = data.results.map(async (pokemon) => {
@@ -41,7 +42,7 @@ function App() {
       const results = await Promise.all(response);
       setPokemons(results);
       setTotalPages(Math.ceil(data.count / itensPerPage));
-
+      
       // Region
       const data_region = await getPokemonRegion();
       const response_region = data_region.results.map(async (region) => {
@@ -88,7 +89,7 @@ function App() {
       setLoading(false);
     }, 1000)
     fetchPokemons();
-
+    
   }, [page]);
 
   const updateFavoritePokemon = (name) => {
@@ -105,20 +106,24 @@ function App() {
 
   const onSearchPokemon = async (pokemon) => {
     if (!pokemon) {
-      return fetchPokemons();
+      fetchPokemons();
     }
-    setLoading(true);
     setNotFound(false);
+    setLoading(true);
 
     const result = await searchPokemon(pokemon);
     if (!result) {
       setNotFound(true);
+
     } else {
-      setTimeout(() => {
-        setPokemons([result]);
-      }, 3000)
+      setPokemons([result]);
+      setPage(0);
+      setTotalPages(1);
     }
-    setLoading(false);
+    
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000)
   }
 
   return (
@@ -130,16 +135,18 @@ function App() {
         }}
       >
         <Router>
-          <NavBar onSearch={onSearchPokemon} />
+          <NavBar onSearch={onSearchPokemon} visible={visible} setVisible={setVisible}/>
           <div className='app_container'>
             <Routes>
-              <Route path='/' element={<Home regions={regions} />} />
+              <Route path='/' element={<Home regions={regions} setVisible={setVisible}/>} />
               <Route path="/pokedex_all" element={<PokedexPage pokemons={pokemons} loading={loading} page={page} totalPages={totalPages} setPage={setPage} />} />
               <Route path='/kanto' element={<PokedexPageRegion pokemonsRegionAll={pokemonRegion} loading={loading} page={0} totalPages={0} setPage={0} />} />
               {/* <Route path='/favorite' element={} /> */}
             </Routes>
           </div>
+          
         </Router>
+
       </FavoriteProvider>
     </>
   );

@@ -10,7 +10,6 @@ function PagePokedex(props) {
 
     const [modalVisible, setModalVisible] = useState(false);
 
-
     const onLeftClickHandler = () => {
         if (page > 0) {
             setPage(page - 1);
